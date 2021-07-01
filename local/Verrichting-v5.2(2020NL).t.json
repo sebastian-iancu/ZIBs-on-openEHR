@@ -22,8 +22,10 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "MD5-CAM-1.0.1" : "6a9dead204325d443ab5a28e4d5a2fc7",
-      "PARENT:MD5-CAM-1.0.1" : "CCA98FC01E850D302CF1E149938C4E54"
+      "MD5-CAM-1.0.1" : "b24cf0c661c14de9562c393afab00fea",
+      "PARENT:MD5-CAM-1.0.1" : "7976419EEFB8BFACDA7BAB23201F9BEF",
+      "sem_ver" : "0.1.0",
+      "build_uid" : "bdc11249-0eaf-4ded-992c-44d7e908b3d6"
     },
     "details" : {
       "de" : {
@@ -121,6 +123,21 @@
         "keywords" : [ ],
         "originalResourceUri" : { },
         "otherDetails" : { }
+      },
+      "sv" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "sv"
+        },
+        "purpose" : "Att registrera information om de aktiviteter som krävs för att genomföra en procedur, inklusive planering, schemaläggning, utförande, avstängning, avbokning, dokumentation och slutförande. \r\n\r\n",
+        "keywords" : [ "*procedur", "*intervention", "*kirurgi", "*medicinsk", "*klinisk", "*terapeutisk", "*diagnostisk", "*botande", "*behandling", "*utredning", "*undersökning", "*screening", "*palliativ", "*terapi" ],
+        "use" : "Används för att registrera information om de aktiviteter som krävs för att genomföra en procedur, inklusive planering, schemaläggning, utförande, avstängning, avbokning, dokumentation och slutförande. Detta görs genom registrering av data mot specifika aktiviteter, som definieras av \"Pathway\" -flödesstegen i denna arketyp.\r\n \r\nDenna arketyp omfattar aktiviteter för ett brett spektrum av kliniska procedurer som utförs för utvärderande, undersökande, screening, diagnostiska, botande, terapeutiska eller palliativa ändamål. Till exempel kan den användas för allt från relativt enkla aktiviteter, såsom insättning av en intravenös kanyl, till komplexa kirurgiska operationer. \r\n\r\nYtterligare strukturerad och detaljerad information om proceduren kan fångas med hjälp av specifika arketyper infogade i rutan 'Procedur detaljer', om så krävs. \r\n\r\nTider relaterade till ett förfarande kan hanteras på ett av två sätt: \r\n- Med hjälp av referensmodellen - tiden för utförandet av något vägsteg ska använda attributet ACTION time för varje steg. \r\n- Archetyped dataelement: \r\n--- dataelementet 'Schemalagt datum/tid' är avsett att registrera den exakta tidpunkt då proceduren planeras. \r\n\r\nObs! Motsvarande ACTION-tidsattribut för det schemalagda vägsteget registrerar den tid som proceduren planerades i ett system, inte det avsedda datumet/tiden då proceduren är avsedd att genomföras; och \r\n--- \"Slutdatum/tid\" är avsedd att registrera den exakta tidpunkt då proceduren avslutades. Den kan användas för att dokumentera komplexa procedurer med flera komponenter. \r\n\r\nObs! Motsvarande ACTION-tidsattribut för \"Procedur utförd\" kommer att dokumentera den tid varje komponent som utfördes påbörjades. Det \"Slutliga slutdatum/tid\" -element registrerar datum/tid för den slutliga aktiva komponenten i proceduren. \r\nDetta gör det möjligt att beräkna en fullständig varaktighet av det aktiva förfarandet. \r\n\r\nInom ramen för en operationsrapport kommer denna arketyp att användas för att bara registrera vad som gjordes under proceduren. Separata arketyper kommer att användas för att registrera de andra nödvändiga komponenterna i operationsrapporten, inklusive att ta prover av vävnadsprover, användning av avbildningsvägledning, funktionsresultat, postoperativa instruktioner och planer för uppföljning. \r\n\r\nInom ramen för en problemlista eller sammanfattning kan denna arketyp användas för att representera procedurer som har utförts. EVALUATION.problem_diagnosis kommer att användas för att representera patientens problem och diagnoser. \r\n\r\nI praktiken kommer många förfaranden (till exempel ambulansvård) att inträffa en gång och inte beställas i förväg. Detaljerna om proceduren kommer att läggas till i steget, \"Procedur slutförd\". I vissa fall kommer ett återkommande förfarande att beställas, och i denna situation registreras data över steget \"Procedur utförd\" vid varje tillfälle och lämnar instruktionen i aktivt tillstånd. När den senaste händelsen registreras registreras åtgärden 'Procedur slutförd' som visar att denna procedur nu är i det färdiga tillståndet. \r\n\r\nI andra situationer, till exempel sekundärvård, kan det finnas en formell order för ett förfarande med en motsvarande INSTRUKTION-arketyp. Denna ACTION-arketyp kan sedan användas för att registrera arbetsflödet för när och hur proceduren har genomförts. \r\n\r\nDokumentation med den här ACTION-arketypen indikerar att någon form av aktivitet faktiskt har inträffat; detta är vanligtvis själva proceduren men kan vara ett misslyckat försök eller en annan aktivitet som att skjuta upp proceduren. Om det finns en formell beställning för proceduren representeras tillståndet för denna beställning av det Pathway-steg mot vilket data registreras. Till exempel, med den här arketypen kan det fortskridande tillståndet för en Gastroskopi-beställning registreras genom separata poster i EHR-framstegsanteckningarna vid varje \"Pathway\" -steg: \r\n- registrera schemalagt startdatum/tid för gastroskopi (schemalagd procedur); och \r\n- registrera att gastroskopiproceduren har slutförts, inklusive information om proceduruppgifterna (proceduren avslutad). \r\n\r\nObservera att i openEHR-referensmodellen finns ett attribut 'Time' som är avsett att registrera datum och tidpunkt då varje steg i åtgärden utfördes. Detta är attributet som ska användas för att registrera inledningen av proceduren (med hjälp av steget 'Procedur utfört') eller den tid då proceduren avbröts (med hjälp av steget 'Procedur avbruten').\r\n",
+        "misuse" : "Får inte användas för att registrera detaljer om narkos - använd en separat ACTION-arketyp för detta ändamål. \r\n\r\nAnvänds inte för att registrera detaljer om bild undersökningar - använd ACTION.imaging_exam för detta ändamål. \r\n\r\nAnvänds inte för att registrera detaljer om laboratorieundersökningar - använd ACTION.laboratory_test för detta ändamål. \r\n\r\nAnvänds inte för att registrera detaljer om utbildning - använd ACTION.health_education för detta ändamål. \r\n\r\nAnvänds inte för att registrera detaljer om administrativa aktiviteter - använd specifika ADMIN-arketyper för detta ändamål. \r\n\r\nFår inte användas för att registrera detaljer om relaterade aktiviteter, såsom användning av frysta snitt som tagits under en operation, läkemedel som administreras som en del av proceduren eller när bildvisningsvägledning används under proceduren - använd separata och specifika ACTION-arketyper inom samma mall för detta syfte. \r\n\r\nAnvänds inte för att registrera en hel operation eller procedurrapport - använd en mall där den här arketypen bara är en komponent i hela rapporten.\r\n",
+        "originalResourceUri" : { },
+        "otherDetails" : { }
       }
     }
   },
@@ -204,7 +221,8 @@
           "text" : "Verrichting-v5.2(2020NL)",
           "description" : "Eine klinische Aktivität, die zur Früherkennung, Untersuchung, Diagnose, Heilung, Therapie, Bewertung oder in Hinsicht auf palliative Maßnahmen durchgeführt wird."
         }
-      }
+      },
+      "sv" : { }
     },
     "termBindings" : { },
     "terminologyExtracts" : { },
@@ -293,6 +311,20 @@
       "codeString" : "es"
     },
     "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "sv"
+    },
+    "author" : {
+      "name" : "Sofia Lång Janstad, Sofia Janstad",
+      "organisation" : "SLL",
+      "email" : "sofia.lang-janstad@sll.se"
+    },
     "otherDetails" : { }
   } ]
 }
