@@ -317,11 +317,7 @@
             "localizedDescriptions" : {
               "en" : "An unfavorable evolution of a problem or diagnosis."
             }
-          } ],
-          "listOpen" : true
-        }, {
-          "suffix" : "other",
-          "type" : "TEXT"
+          } ]
         } ]
       } ]
     }, {

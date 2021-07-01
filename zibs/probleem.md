@@ -9,6 +9,7 @@ openEHR:
         - Probleem-v4.4(2020NL)
     archetypes: 
         - openEHR-EHR-EVALUATION.problem_diagnosis.v1
+        - openEHR-EHR-CLUSTER.problem_qualifier.v1
 status:
     mapping: Ontwikkelen
     template: Ontwikkelen
