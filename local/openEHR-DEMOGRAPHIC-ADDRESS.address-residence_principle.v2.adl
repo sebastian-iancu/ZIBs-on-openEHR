@@ -61,7 +61,7 @@ description
 	>
 	other_details = <
 		["references"] = <"ISO/TS 22220:2008(E) - Identification of Subject of Care - Technical Specification - International Organization for Standardization.">
-		["MD5-CAM-1.0.1"] = <"b447f9926119793c1c4313a37f45b46c">
+		["MD5-CAM-1.0.1"] = <"2abcff9a738eee98fea1a69ccb8441a0">
 		["build_uid"] = <"672f56df-9a6e-3a81-b191-2223ebdb747b">
 	>
 
@@ -236,6 +236,46 @@ ontology
 	term_definitions = <
 		["pt-br"] = <
 			items = <
+				["at0000.1"] = <
+					text = <"Endereço">
+					description = <"Endereço.">
+				>
+				["at0002.1"] = <
+					text = <"Linhas de endereço">
+					description = <"Uma composição de um ou mais componentes padrões do endereço que fornece uma descrição geográfica/física de uma localização e que, usada em conjunto com outros componentes de nível mais alto do endereço, isto é, 'Subúrbio/cidade/nome da localidade', 'Código Postal', 'Estado/território/província', e 'País', formam um endereço geográfico/físico completo.">
+				>
+				["at0003.1"] = <
+					text = <"Bairro">
+					description = <"Bairro do Logradouro.">
+				>
+				["at0004.1"] = <
+					text = <"Setor censitário">
+					description = <"Código do setor censitário.">
+				>
+				["at0005.1"] = <
+					text = <"Caixa Postal">
+					description = <"Um número único atribuído a um endereço postal conforme designado pelo serviço postal.">
+				>
+				["at0006.1"] = <
+					text = <"CEP">
+					description = <"O código para uma área de entrega postal, alinhada com a localidade, subúrbio ou local para o endereço, conforme definido pelo serviço postal.">
+				>
+				["at0008.1"] = <
+					text = <"Estado">
+					description = <"Um identificador da Província, Estado ou Território que contém o endereço.">
+				>
+				["at0010.1"] = <
+					text = <"Indicador de acurácia da data de início de validade do endereço">
+					description = <"Uma indicação da acurácia da data de início de validade do endereço. Ela é expressa por meio de uma sequência de três caracteres com os valores possíveis A (acurada), E (estimada) ou U (desconhecida) cada um. Os caracteres representam a acurácia para o ano, mês e ano respectivamente. Este elemento foi introduzido para permitir a representação da acurácia de acordo com a norma ISO 22220, mas o modelo de referência do openEHR representa a acurácia da data de modo diferente (veja a especificação dos tipos de dados).">
+				>
+				["at0011.1"] = <
+					text = <"Indicador de acurácia da data final de validade do endereço">
+					description = <"Uma indicação da acurácia da data final de validade do endereço. Ela é expressa por meio de uma sequência de três caracteres com os valores possíveis A (acurada), E (estimada) ou U (desconhecida) cada um. Os caracteres representam a acurácia para o ano, mês e ano respectivamente. Este elemento foi introduzido para permitir a representação da acurácia de acordo com a norma ISO 22220, mas o modelo de referência do openEHR representa a acurácia da data de modo diferente (veja a especificação dos tipos de dados).">
+				>
+				["at0000"] = <
+					text = <"Endereço">
+					description = <"Endereço.">
+				>
 				["at0001"] = <
 					text = <"Itens do endereço">
 					description = <"Itens do endereço.">
@@ -376,46 +416,50 @@ ontology
 					text = <"Remarks">
 					description = <"Other details or remarks.">
 				>
-				["at0000.1"] = <
-					text = <"Endereço">
-					description = <"Endereço.">
-				>
-				["at0002.1"] = <
-					text = <"Linhas de endereço">
-					description = <"Uma composição de um ou mais componentes padrões do endereço que fornece uma descrição geográfica/física de uma localização e que, usada em conjunto com outros componentes de nível mais alto do endereço, isto é, 'Subúrbio/cidade/nome da localidade', 'Código Postal', 'Estado/território/província', e 'País', formam um endereço geográfico/físico completo.">
-				>
-				["at0003.1"] = <
-					text = <"Bairro">
-					description = <"Bairro do Logradouro.">
-				>
-				["at0004.1"] = <
-					text = <"Setor censitário">
-					description = <"Código do setor censitário.">
-				>
-				["at0005.1"] = <
-					text = <"Caixa Postal">
-					description = <"Um número único atribuído a um endereço postal conforme designado pelo serviço postal.">
-				>
-				["at0006.1"] = <
-					text = <"CEP">
-					description = <"O código para uma área de entrega postal, alinhada com a localidade, subúrbio ou local para o endereço, conforme definido pelo serviço postal.">
-				>
-				["at0008.1"] = <
-					text = <"Estado">
-					description = <"Um identificador da Província, Estado ou Território que contém o endereço.">
-				>
-				["at0010.1"] = <
-					text = <"Indicador de acurácia da data de início de validade do endereço">
-					description = <"Uma indicação da acurácia da data de início de validade do endereço. Ela é expressa por meio de uma sequência de três caracteres com os valores possíveis A (acurada), E (estimada) ou U (desconhecida) cada um. Os caracteres representam a acurácia para o ano, mês e ano respectivamente. Este elemento foi introduzido para permitir a representação da acurácia de acordo com a norma ISO 22220, mas o modelo de referência do openEHR representa a acurácia da data de modo diferente (veja a especificação dos tipos de dados).">
-				>
-				["at0011.1"] = <
-					text = <"Indicador de acurácia da data final de validade do endereço">
-					description = <"Uma indicação da acurácia da data final de validade do endereço. Ela é expressa por meio de uma sequência de três caracteres com os valores possíveis A (acurada), E (estimada) ou U (desconhecida) cada um. Os caracteres representam a acurácia para o ano, mês e ano respectivamente. Este elemento foi introduzido para permitir a representação da acurácia de acordo com a norma ISO 22220, mas o modelo de referência do openEHR representa a acurácia da data de modo diferente (veja a especificação dos tipos de dados).">
-				>
 			>
 		>
 		["en"] = <
 			items = <
+				["at0000.1"] = <
+					text = <"Residence principle">
+					description = <"Residence principle">
+				>
+				["at0002.1"] = <
+					text = <"Address lines">
+					description = <"A composite of one or more standard address components that describe a low level of geographical/physical description of a location that, used in conjunction with the other high-level address components i.e. ‘suburb / town / locality name’, ‘postal code’, ‘state / territory / province’, and ‘country’, forms a complete geographical/physical address.">
+				>
+				["at0003.1"] = <
+					text = <"District">
+					description = <"District.">
+				>
+				["at0004.1"] = <
+					text = <"Census area">
+					description = <"Area defined by the Brazilian Geographic and Statistics Bureau according to the spacial distribution of the population.">
+				>
+				["at0005.1"] = <
+					text = <"Delivery point identifier">
+					description = <"A unique number assigned to a postal address as designated by the postal service.">
+				>
+				["at0006.1"] = <
+					text = <"Postal code (ZIP code)">
+					description = <"The code for a postal delivery area, aligned with locality, suburb or place for the address, as defined by the postal service.">
+				>
+				["at0008.1"] = <
+					text = <"State/territory/province identifier">
+					description = <"An identifier of the province, state or territory containing the address.">
+				>
+				["at0010.1"] = <
+					text = <"Address type start date accuracy indicator">
+					description = <"An indication of the accuracy of the address type start date at the component level for the date. It is expressed by means of a sequence of three characters with possible values A (accurate), E (estimated) or U (unknown) each. The characters represent the accuracy for the year, month and day respectively. This element was introduced in order to be compatible with ISO 22220, but openEHR reference model represents date accuracy in a different way (see the data types specification).">
+				>
+				["at0011.1"] = <
+					text = <"Address type end date accuracy indicator">
+					description = <"An indication of the accuracy of the address type end date at the component level for the date. It is expressed by means of a sequence of three characters with possible values A (accurate), E (estimated) or U (unknown) each. The characters represent the accuracy for the year, month and day respectively. This element was introduced in order to be compatible with ISO 22220, but openEHR reference model represents date accuracy in a different way (see the data types specification).">
+				>
+				["at0000"] = <
+					text = <"Address">
+					description = <"Address based on ISO22220 standard.">
+				>
 				["at0001"] = <
 					text = <"Items">
 					description = <"Address items.">
@@ -556,12 +600,16 @@ ontology
 					text = <"Remarks">
 					description = <"Other details or remarks.">
 				>
+			>
+		>
+		["nl"] = <
+			items = <
 				["at0000.1"] = <
-					text = <"Residence principle">
-					description = <"Residence principle">
+					text = <"Woonplaatsbeginsel">
+					description = <"Woonplaatsbeginsel">
 				>
 				["at0002.1"] = <
-					text = <"Address lines">
+					text = <"Adres regel">
 					description = <"A composite of one or more standard address components that describe a low level of geographical/physical description of a location that, used in conjunction with the other high-level address components i.e. ‘suburb / town / locality name’, ‘postal code’, ‘state / territory / province’, and ‘country’, forms a complete geographical/physical address.">
 				>
 				["at0003.1"] = <
@@ -577,12 +625,12 @@ ontology
 					description = <"A unique number assigned to a postal address as designated by the postal service.">
 				>
 				["at0006.1"] = <
-					text = <"Postal code (ZIP code)">
-					description = <"The code for a postal delivery area, aligned with locality, suburb or place for the address, as defined by the postal service.">
+					text = <"Postcode">
+					description = <"Postcode van het adres.">
 				>
 				["at0008.1"] = <
-					text = <"State/territory/province identifier">
-					description = <"An identifier of the province, state or territory containing the address.">
+					text = <"Provincie">
+					description = <"Provincie.">
 				>
 				["at0010.1"] = <
 					text = <"Address type start date accuracy indicator">
@@ -592,10 +640,10 @@ ontology
 					text = <"Address type end date accuracy indicator">
 					description = <"An indication of the accuracy of the address type end date at the component level for the date. It is expressed by means of a sequence of three characters with possible values A (accurate), E (estimated) or U (unknown) each. The characters represent the accuracy for the year, month and day respectively. This element was introduced in order to be compatible with ISO 22220, but openEHR reference model represents date accuracy in a different way (see the data types specification).">
 				>
-			>
-		>
-		["nl"] = <
-			items = <
+				["at0000"] = <
+					text = <"Adres">
+					description = <"Adres gebaseerd op de ISO22220 standaard.">
+				>
 				["at0001"] = <
 					text = <"Gegevens">
 					description = <"Bevat alle gegevenselementen van een adres.">
@@ -735,42 +783,6 @@ ontology
 				["at2499"] = <
 					text = <"Opmerkingen">
 					description = <"Other details or remarks.">
-				>
-				["at0000.1"] = <
-					text = <"Woonplaatsbeginsel">
-					description = <"Woonplaatsbeginsel">
-				>
-				["at0002.1"] = <
-					text = <"Adres regel">
-					description = <"A composite of one or more standard address components that describe a low level of geographical/physical description of a location that, used in conjunction with the other high-level address components i.e. ‘suburb / town / locality name’, ‘postal code’, ‘state / territory / province’, and ‘country’, forms a complete geographical/physical address.">
-				>
-				["at0003.1"] = <
-					text = <"District">
-					description = <"District.">
-				>
-				["at0004.1"] = <
-					text = <"Census area">
-					description = <"Area defined by the Brazilian Geographic and Statistics Bureau according to the spacial distribution of the population.">
-				>
-				["at0005.1"] = <
-					text = <"Delivery point identifier">
-					description = <"A unique number assigned to a postal address as designated by the postal service.">
-				>
-				["at0006.1"] = <
-					text = <"Postcode">
-					description = <"Postcode van het adres.">
-				>
-				["at0008.1"] = <
-					text = <"Provincie">
-					description = <"Provincie.">
-				>
-				["at0010.1"] = <
-					text = <"Address type start date accuracy indicator">
-					description = <"An indication of the accuracy of the address type start date at the component level for the date. It is expressed by means of a sequence of three characters with possible values A (accurate), E (estimated) or U (unknown) each. The characters represent the accuracy for the year, month and day respectively. This element was introduced in order to be compatible with ISO 22220, but openEHR reference model represents date accuracy in a different way (see the data types specification).">
-				>
-				["at0011.1"] = <
-					text = <"Address type end date accuracy indicator">
-					description = <"An indication of the accuracy of the address type end date at the component level for the date. It is expressed by means of a sequence of three characters with possible values A (accurate), E (estimated) or U (unknown) each. The characters represent the accuracy for the year, month and day respectively. This element was introduced in order to be compatible with ISO 22220, but openEHR reference model represents date accuracy in a different way (see the data types specification).">
 				>
 			>
 		>
