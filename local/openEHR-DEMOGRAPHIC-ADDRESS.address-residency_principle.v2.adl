@@ -61,7 +61,7 @@ description
 	>
 	other_details = <
 		["references"] = <"ISO/TS 22220:2008(E) - Identification of Subject of Care - Technical Specification - International Organization for Standardization.">
-		["MD5-CAM-1.0.1"] = <"896abfef9773639eb7624893d2f5ca98">
+		["MD5-CAM-1.0.1"] = <"f3c18b1f0da0bf216cc1b9a52505e1f7">
 		["build_uid"] = <"672f56df-9a6e-3a81-b191-2223ebdb747b">
 	>
 
@@ -557,7 +557,7 @@ ontology
 					description = <"Other details or remarks.">
 				>
 				["at0000.1"] = <
-					text = <"Address">
+					text = <"Residency">
 					description = <"Address based on ISO22220 standard.">
 				>
 				["at0002.1"] = <
@@ -737,7 +737,7 @@ ontology
 					description = <"Other details or remarks.">
 				>
 				["at0000.1"] = <
-					text = <"Adres">
+					text = <"Woonplaatsbeginsel">
 					description = <"Adres gebaseerd op de ISO22220 standaard.">
 				>
 				["at0002.1"] = <
