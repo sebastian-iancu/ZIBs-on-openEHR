@@ -1,0 +1,277 @@
+archetype (adl_version=1.4; uid=594e342a-eb0d-3688-b4b5-ba373207ca23)
+	openEHR-DEMOGRAPHIC-PERSON.person.v2
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::pt-br]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"Sergio Miranda Freire">
+				["organisation"] = <"Universidade do Estado do Rio de Janeiro - UERJ">
+				["email"] = <"sergio@lampada.uerj.br">
+			>
+		>
+		["nl"] = <
+			language = <[ISO_639-1::nl]>
+			author = <
+				["name"] = <"">
+				["organisation"] = <"">
+				["email"] = <"">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"22/05/2009">
+		["name"] = <"Sergio Miranda Freire & Rigoleta Dutra Mediano Dias">
+		["organisation"] = <"Universidade do Estado do Rio de Janeiro - UERJ">
+		["email"] = <"sergio@lampada.uerj.br">
+	>
+	lifecycle_state = <"Authordraft">
+	other_contributors = <"Sebastian Garde, Ocean Informatics, Germany (Editor)","Omer Hotomaroglu, Turkey (Editor)","Heather Leslie, Ocean Informatics, Australia (Editor)">
+	details = <
+		["pt-br"] = <
+			language = <[ISO_639-1::pt-br]>
+			purpose = <"Representação dos dados demográficos de uma pessoa.">
+			keywords = <"serviço demográfico","dados de uma pessoa">
+			copyright = <"© openEHR Foundation">
+			use = <"Usado em serviço demográficos para coletar os dados de uma pessoa.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Representation of a person's demographic data.">
+			keywords = <"demographic service","person's data">
+			copyright = <"© openEHR Foundation">
+			use = <"Used in demographic service to collect a person's data.">
+		>
+		["nl"] = <
+			language = <[ISO_639-1::nl]>
+			purpose = <"Representation of a person's demographic data.">
+			keywords = <"demographic service","person's data">
+			copyright = <"© openEHR Foundation">
+			use = <"Used in demographic service to collect a person's data.">
+		>
+	>
+	other_details = <
+		["references"] = <"ISO/TS 22220:2008(E) - Identification of Subject of Care - Technical Specification - International Organization for Standardization.">
+		["MD5-CAM-1.0.1"] = <"ece3f4249d65844ffaf7a940d3575f1d">
+		["build_uid"] = <"7dcfdde5-2928-3b9d-a3ab-eb6060e68890">
+	>
+
+definition
+	PERSON[at0000] matches {    -- Dados da pessoa
+		details matches {
+			allow_archetype ITEM_TREE[at0001] matches {    -- Detalhes
+				include
+					archetype_id/value matches {/(person_details)[a-zA-Z0-9_-]*\.v1/}
+			}
+		}
+		identities cardinality matches {1..*; ordered} matches {
+			allow_archetype PARTY_IDENTITY[at0002] occurrences matches {1..*} matches {    -- Nome
+				include
+					archetype_id/value matches {/(person_name)[a-zA-Z0-9_-]*\.v1/}
+			}
+		}
+		contacts cardinality matches {1..*; unordered} matches {
+			CONTACT[at0003] matches {    -- Contatos
+				addresses cardinality matches {1..*; unordered} matches {
+					allow_archetype ADDRESS[at0030] occurrences matches {0..*} matches {    -- Endereço
+						include
+							archetype_id/value matches {/(address)[a-zA-Z0-9_-]*\.v1/}
+							archetype_id/value matches {/(electronic_communication)[a-zA-Z0-9_-]*\.v1/}
+					}
+				}
+			}
+			CONTACT[at0005] matches {    -- (en)Residence principle
+				addresses cardinality matches {1..1; ordered} matches {
+					allow_archetype ADDRESS[at0030] matches {    -- Endereço
+						include
+							archetype_id/value matches {/(address-residence_principle)[a-zA-Z0-9_-]*\.v1/}
+					}
+				}
+			}
+		}
+		relationships cardinality matches {1..*; unordered} matches {
+			PARTY_RELATIONSHIP[at0004] matches {    -- Relacionamentos
+				details matches {
+					ITEM_TREE[at0040] matches {    -- Grau de parentesco
+						items cardinality matches {1..*; ordered} matches {
+							ELEMENT[at0041] occurrences matches {0..1} matches {    -- Type of relationship
+								value matches {
+									DV_TEXT matches {*}
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[ac0001]
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	terminologies_available = <"code24", ...>
+	term_definitions = <
+		["pt-br"] = <
+			items = <
+				["at0000"] = <
+					text = <"Dados da pessoa">
+					description = <"Dados da pessoa.">
+				>
+				["at0001"] = <
+					text = <"Detalhes">
+					description = <"Detalhes demográficos da pessoa.">
+				>
+				["at0002"] = <
+					text = <"Nome">
+					description = <"Conjunto de dados que especificam o nome da pessoa.">
+				>
+				["at0003"] = <
+					text = <"Contatos">
+					description = <"Contatos da pessoa.">
+				>
+				["at0004"] = <
+					text = <"Relacionamentos">
+					description = <"Relacionamentos de uma pessoa, especialmente laços familiares.">
+				>
+				["at0005"] = <
+					text = <"(en)Residence principle">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Endereço">
+					description = <"Endereços vinculados a um único contato, ou seja, com o mesmo período de validade.">
+				>
+				["at0040"] = <
+					text = <"Grau de parentesco">
+					description = <"Define o grau de parentesco entre as pessoas envolvidas.">
+				>
+				["at0041"] = <
+					text = <"Type of relationship">
+					description = <"Tipo de relacionamento entre as duas organizações.">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Person">
+					description = <"Personal demographic data.">
+				>
+				["at0001"] = <
+					text = <"Demographic details">
+					description = <"A person's demographic details.">
+				>
+				["at0002"] = <
+					text = <"Name">
+					description = <"A person's name.">
+				>
+				["at0003"] = <
+					text = <"Contacts">
+					description = <"A person's contacts.">
+				>
+				["at0005"] = <
+					text = <"Residence principle">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Addresses">
+					description = <"Addresses linked to a single contact, i.e. with the same time validity.">
+				>
+				["at0040"] = <
+					text = <"Relationship type">
+					description = <"Defines the type of relationship between related persons.">
+				>
+				["at0041"] = <
+					text = <"Type of relationship">
+					description = <"Type of relationship between two persons.">
+				>
+				["at0004"] = <
+					text = <"*Relacionamentos(pt-br)">
+					description = <"*Relacionamentos de uma pessoa, especialmente laços familiares.(pt-br)">
+				>
+			>
+		>
+		["nl"] = <
+			items = <
+				["at0000"] = <
+					text = <"Persoon">
+					description = <"Persoonlijke demografische gegevens.">
+				>
+				["at0001"] = <
+					text = <"Demografische gegevens">
+					description = <"Een persoon demografische gegevens.">
+				>
+				["at0002"] = <
+					text = <"Naam">
+					description = <"De naam van een persoon.">
+				>
+				["at0003"] = <
+					text = <"Contacten">
+					description = <"Contacten van een persoon.">
+				>
+				["at0004"] = <
+					text = <"Relaties">
+					description = <"Relaties van een persoon.">
+				>
+				["at0005"] = <
+					text = <"Woonplaatsbeginsel">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Adressen">
+					description = <"Adressen van een persoon.">
+				>
+				["at0040"] = <
+					text = <"Soort relatie">
+					description = <"Definieert het type relatie tussen verwante personen.">
+				>
+				["at0041"] = <
+					text = <"Soort relatie">
+					description = <"Type relatie tussen twee personen.">
+				>
+			>
+		>
+	>
+	constraint_definitions = <
+		["pt-br"] = <
+			items = <
+				["ac0001"] = <
+					text = <"Códigos para tipo de parentesco">
+					description = <"códigos válidos para tipo de parentesco.">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["ac0001"] = <
+					text = <"Codes for type of relationship">
+					description = <"Valid codes for type of relationship.">
+				>
+			>
+		>
+		["nl"] = <
+			items = <
+				["ac0001"] = <
+					text = <"Codes voor relatie type">
+					description = <"Valid codes for type of relationship.">
+				>
+			>
+		>
+	>
+	constraint_binding = <
+		["code24"] = <
+			items = <
+				["ac0001"] = <terminology:code24?subset=person_relationship>
+			>
+		>
+	>
